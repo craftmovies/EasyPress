@@ -8,7 +8,7 @@
  */
 
 /** Make sure that the WordPress bootstrap has run before continuing. */
-require(dirname(__FILE__) . '/wp-load.php');
+require(dirname(__FILE__) . '/ep-load.php');
 
 /** This filter is documented in wp-admin/options.php */
 if ( ! apply_filters( 'enable_post_by_email_configuration', true ) )
@@ -19,7 +19,7 @@ if ( ! apply_filters( 'enable_post_by_email_configuration', true ) )
  *
  * @since 2.9.0
  */
-do_action( 'wp-mail.php' );
+do_action( 'ep-mail.php' );
 
 /** Get the POP3 class with which to access the mailbox. */
 require_once( ABSPATH . WPINC . '/class-pop3.php' );

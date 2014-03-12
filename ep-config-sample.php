@@ -1,6 +1,6 @@
 <?php
 /**
- * The base configurations of the WordPress.
+ * The base configurations of the EasyPress.
  *
  * This file has the following configurations: MySQL settings, Table Prefix,
  * Secret Keys, WordPress Language, and ABSPATH. You can find more information
@@ -11,11 +11,11 @@
  * installation. You don't have to use the web site, you can just copy this file
  * to "wp-config.php" and fill in the values.
  *
- * @package WordPress
+ * @package EasyPress
  */
 
 // ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
+/** The name of the database for EasyPress */
 define('DB_NAME', 'database_name_here');
 
 /** MySQL database username */
@@ -80,11 +80,14 @@ define('WPLANG', '');
  */
 define('WP_DEBUG', false);
 
+// You can also setup multisite by uncomenting line below:
+// define( 'WP_ALLOW_MULTISITE', true );
+
 /* That's all, stop editing! Happy blogging. */
 
-/** Absolute path to the WordPress directory. */
+/** Absolute path to the EasyPres directory. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Sets up WordPress vars and included files. */
-require_once(ABSPATH . 'wp-settings.php');
+require_once(ABSPATH . 'ep-settings.php');

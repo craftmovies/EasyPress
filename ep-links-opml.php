@@ -9,10 +9,10 @@
  * feed links. It will have to be added manually for browsers and users to pick
  * up that this file exists.
  *
- * @package WordPress
+ * @package EasyPress
  */
 
-require_once( dirname( __FILE__ ) . '/wp-load.php' );
+require_once( dirname( __FILE__ ) . '/ep-load.php' );
 
 header('Content-Type: text/xml; charset=' . get_option('blog_charset'), true);
 $link_cat = '';
