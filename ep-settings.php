@@ -15,7 +15,7 @@
  *
  * @since 1.0.0
  */
-define( 'WPINC', 'wp-includes' );
+define( 'WPINC', 'ep-includes' );
 
 // Include files required for initialization.
 require( ABSPATH . WPINC . '/load.php' );

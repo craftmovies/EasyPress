@@ -18,15 +18,15 @@ wp_deregister_script( 'zxcvbn-async' );
 wp_register_script( 'zxcvbn-async', false );
 wp_enqueue_script( 'user-profile' );
 
-include( ABSPATH . 'wp-admin/admin-header.php' );
+include( ABSPATH . 'ep-admin/admin-header.php' );
 ?>
 <div class="wrap about-wrap">
 
-<h1><?php printf( __( 'Welcome to WordPress&nbsp;%s' ), $display_version ); ?></h1>
+<h1><?php printf( __( 'Welcome to EasyPress with WordPress core &nbsp;%s' ), $display_version ); ?></h1>
 
-<div class="about-text"><?php printf( __( 'Thank you for updating to WordPress %s, the most beautiful WordPress&nbsp;yet.' ), $display_version ); ?></div>
+<div class="about-text"><?php printf( __( 'Thank you for updating to WordPress core %s and EasyPress absolute alpha , the most beautiful WordPress and EasyPress&nbsp;yet.' ), $display_version ); ?></div>
 
-<div class="wp-badge"><?php printf( __( 'Version %s' ), $display_version ); ?></div>
+<div class="wp-badge"><?php printf( __( 'Core version %s' ), $display_version ); ?></div>
 
 <h2 class="nav-tab-wrapper">
 	<a href="about.php" class="nav-tab nav-tab-active">
@@ -45,7 +45,7 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 		<div class="col-1">
 			<img src="<?php echo is_ssl() ? 'https://' : '//s.'; ?>wordpress.org/images/core/3.8/aesthetics.png?1" />
 			<h3><?php _e( 'Modern aesthetic' ); ?></h3>
-			<p><?php _e( 'The new WordPress dashboard has a fresh, uncluttered design that embraces clarity and simplicity.' ); ?></p>
+			<p><?php _e( 'The new WordPress core dashboard has a fresh, uncluttered design that embraces clarity and simplicity.' ); ?></p>
 		</div>
 		<div class="col-2">
 			<img src="<?php echo is_ssl() ? 'https://' : '//s.'; ?>wordpress.org/images/core/3.8/typography.png?1" />
@@ -68,7 +68,7 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 			<h3><?php _e( 'WordPress on every&nbsp;device' ); ?></h3>
 			<p><?php _e( 'We all access the internet in different ways. Smartphone, tablet, notebook, desktop &mdash; no matter what you use, WordPress will adapt and you&#8217;ll feel right at home.' ); ?></p>
 			<h4><?php _e( 'High definition at high&nbsp;speed' ); ?></h4>
-			<p><?php _e( 'WordPress is sharper than ever with new vector-based icons that scale to your screen. By ditching pixels, pages load significantly faster, too.' ); ?></p>
+			<p><?php _e( 'WordPress core is sharper than ever with new vector-based icons that scale to your screen. By ditching pixels, pages load significantly faster, too.' ); ?></p>
 		</div>
 		<div class="last-feature about-colors-img">
 			<img src="<?php echo is_ssl() ? 'https://' : '//s.'; ?>wordpress.org/images/core/3.8/colors.png?1" />
@@ -125,7 +125,7 @@ if ( count( $_wp_admin_css_colors ) > 1 && has_action( 'admin_color_scheme_picke
 	<div class="feature-section col one-col center-col">
 		<div>
 			<h3><?php _e( 'Turn your blog into a&nbsp;magazine' ); ?></h3>
-			<p><?php _e( 'Create a beautiful magazine-style site with WordPress and Twenty Fourteen. Choose a grid or a slider to display featured content on your homepage. Customize your site with three widget areas or change your layout with two page templates.' ); ?></p>
+			<p><?php _e( 'Create a beautiful magazine-style site with EasyPress and Twenty Fourteen. Choose a grid or a slider to display featured content on your homepage. Customize your site with three widget areas or change your layout with two page templates.' ); ?></p>
 			<p><?php _e( 'With a striking design that does not compromise our trademark simplicity, Twenty Fourteen is our most intrepid default theme yet.' ); ?></p>
 		</div>
 	</div>
@@ -146,29 +146,4 @@ if ( count( $_wp_admin_css_colors ) > 1 && has_action( 'admin_color_scheme_picke
 </div>
 <?php
 
-include( ABSPATH . 'wp-admin/admin-footer.php' );
-
-// These are strings we may use to describe maintenance/security releases, where we aim for no new strings.
-return;
-
-_n_noop( 'Maintenance Release', 'Maintenance Releases' );
-_n_noop( 'Security Release', 'Security Releases' );
-_n_noop( 'Maintenance and Security Release', 'Maintenance and Security Releases' );
-
-/* translators: 1: WordPress version number. */
-_n_noop( '<strong>Version %1$s</strong> addressed a security issue.',
-         '<strong>Version %1$s</strong> addressed some security issues.' );
-
-/* translators: 1: WordPress version number, 2: plural number of bugs. */
-_n_noop( '<strong>Version %1$s</strong> addressed %2$s bug.',
-         '<strong>Version %1$s</strong> addressed %2$s bugs.' );
-
-/* translators: 1: WordPress version number, 2: plural number of bugs. Singular security issue. */
-_n_noop( '<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bug.',
-         '<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bugs.' );
-
-/* translators: 1: WordPress version number, 2: plural number of bugs. More than one security issue. */
-_n_noop( '<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug.',
-         '<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs.' );
-
-__( 'For more information, see <a href="%s">the release notes</a>.' );
+include( ABSPATH . 'ep-admin/admin-footer.php' );

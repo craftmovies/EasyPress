@@ -1,7 +1,7 @@
 <?php
 
 /** Sets up the WordPress Environment. */
-require( dirname(__FILE__) . '/wp-load.php' );
+require( dirname(__FILE__) . '/ep-load.php' );
 
 add_action( 'wp_head', 'wp_no_robots' );
 
@@ -28,12 +28,12 @@ function do_signup_header() {
 add_action( 'wp_head', 'do_signup_header' );
 
 if ( !is_multisite() ) {
-	wp_redirect( site_url('wp-login.php?action=register') );
+	wp_redirect( site_url('ep-login.php?action=register') );
 	die();
 }
 
 if ( !is_main_site() ) {
-	wp_redirect( network_site_url( 'wp-signup.php' ) );
+	wp_redirect( network_site_url( 'ep-signup.php' ) );
 	die();
 }
 
@@ -279,7 +279,7 @@ function signup_another_blog( $blogname = '', $blog_title = '', $errors = '' ) {
 	<?php } ?>
 
 	<p><?php _e( 'If you&#8217;re not going to use a great site domain, leave it for a new user. Now have at it!' ) ?></p>
-	<form id="setupform" method="post" action="wp-signup.php">
+	<form id="setupform" method="post" action="ep-signup.php">
 		<input type="hidden" name="stage" value="gimmeanotherblog" />
 		<?php
 		/**
@@ -372,7 +372,7 @@ function confirm_another_blog_signup( $domain, $path, $blog_title, $user_name, $
 	?>
 	<h2><?php printf( __( 'The site %s is yours.' ), "<a href='http://{$domain}{$path}'>{$blog_title}</a>" ) ?></h2>
 	<p>
-		<?php printf( __( '<a href="http://%1$s">http://%2$s</a> is your new site. <a href="%3$s">Log in</a> as &#8220;%4$s&#8221; using your existing password.' ), $domain.$path, $domain.$path, "http://" . $domain.$path . "wp-login.php", $user_name ) ?>
+		<?php printf( __( '<a href="http://%1$s">http://%2$s</a> is your new site. <a href="%3$s">Log in</a> as &#8220;%4$s&#8221; using your existing password.' ), $domain.$path, $domain.$path, "http://" . $domain.$path . "ep-login.php", $user_name ) ?>
 	</p>
 	<?php
 	/**
@@ -429,7 +429,7 @@ function signup_user( $user_name = '', $user_email = '', $errors = '' ) {
 	?>
 
 	<h2><?php printf( __( 'Get your own %s account in seconds' ), get_current_site()->site_name ) ?></h2>
-	<form id="setupform" method="post" action="wp-signup.php">
+	<form id="setupform" method="post" action="ep-signup.php">
 		<input type="hidden" name="stage" value="validate-user-signup" />
 		<?php
 		/** This action is documented in wp-signup.php */
@@ -502,7 +502,7 @@ function confirm_user_signup($user_name, $user_email) {
 	<p><?php printf( __( 'Check your inbox at <strong>%s</strong> and click the link given.' ), $user_email ); ?></p>
 	<p><?php _e( 'If you do not activate your username within two days, you will have to sign up again.' ); ?></p>
 	<?php
-	/** This action is documented in wp-signup.php */
+	/** This action is documented in ep-signup.php */
 	do_action( 'signup_finished' );
 }
 
@@ -557,7 +557,7 @@ function signup_blog($user_name = '', $user_email = '', $blogname = '', $blog_ti
 	if ( empty($blogname) )
 		$blogname = $user_name;
 	?>
-	<form id="setupform" method="post" action="wp-signup.php">
+	<form id="setupform" method="post" action="ep-signup.php">
 		<input type="hidden" name="stage" value="validate-blog-signup" />
 		<input type="hidden" name="user_name" value="<?php echo esc_attr($user_name) ?>" />
 		<input type="hidden" name="user_email" value="<?php echo esc_attr($user_email) ?>" />
@@ -604,7 +604,7 @@ function validate_blog_signup() {
 	$public = (int) $_POST['blog_public'];
 	$meta = array ('lang_id' => 1, 'public' => $public);
 
-	/** This filter is documented in wp-signup.php */
+	/** This filter is documented in ep-signup.php */
 	$meta = apply_filters( 'add_signup_meta', $meta );
 
 	wpmu_signup_blog($domain, $path, $blog_title, $user_name, $user_email, $meta);
@@ -641,7 +641,7 @@ function confirm_blog_signup( $domain, $path, $blog_title, $user_name = '', $use
 		</ul>
 	</p>
 	<?php
-	/** This action is documented in wp-signup.php */
+	/** This action is documented in ep-signup.php */
 	do_action( 'signup_finished' );
 }
 

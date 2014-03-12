@@ -27,7 +27,7 @@ if ( ! WP_NETWORK_ADMIN && ! WP_USER_ADMIN ) {
 if ( isset($_GET['import']) && !defined('WP_LOAD_IMPORTERS') )
 	define('WP_LOAD_IMPORTERS', true);
 
-require_once(dirname(dirname(__FILE__)) . '/wp-load.php');
+require_once(dirname(dirname(__FILE__)) . '/ep-load.php');
 
 nocache_headers();
 
@@ -74,7 +74,7 @@ if ( get_option('db_upgraded') ) {
 	}
 }
 
-require_once(ABSPATH . 'wp-admin/includes/admin.php');
+require_once(ABSPATH . 'ep-admin/includes/admin.php');
 
 auth_redirect();
 
@@ -107,11 +107,11 @@ else
 	$taxnow = '';
 
 if ( WP_NETWORK_ADMIN )
-	require(ABSPATH . 'wp-admin/network/menu.php');
+	require(ABSPATH . 'ep-admin/network/menu.php');
 elseif ( WP_USER_ADMIN )
-	require(ABSPATH . 'wp-admin/user/menu.php');
+	require(ABSPATH . 'ep-admin/user/menu.php');
 else
-	require(ABSPATH . 'wp-admin/menu.php');
+	require(ABSPATH . 'ep-admin/menu.php');
 
 if ( current_user_can( 'manage_options' ) ) {
 	/**
